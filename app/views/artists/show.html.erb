@@ -1,14 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+  <div class='col-xs-10 col-xs-offset-1'>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+    <p id="notice"><%= notice %></p>
+    <h3>
+     <strong>Songs by <%= @artist.name %></strong>
+    </h3>
+    <p>
+      <strong>Name:</strong>
+      <%= @artist.name %>
+        </p>
+        <ul>
+          <% @artist.songs.order('name').each do |song| %>
+            <li><%= song.name %></li>
+          <% end %>
+        </ul>
+        <p>
+      <strong>Genre:</strong>
+      <%= @artist.genre.name %>
+    </p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre.name %>
-</p>
+    <%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-sm  btn-default' %> |
+    <%= link_to 'Back', artists_path, class: 'btn btn-sm btn-info' %>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
