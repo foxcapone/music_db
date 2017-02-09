@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+genres = ['Pop',
+          'Rap',
+          'Country',
+          'Progressive',
+          'Funk',
+          'Blues',
+          'Motown']
+
+genres.each do |genre|
+  Genre.create(name: genre)
+end
+
+puts "Your database has been seeded."
