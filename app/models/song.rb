@@ -4,6 +4,7 @@ class Song < ApplicationRecord
   validates :name, :artist_id, :artist, presence: true
 end
 
+
 # == Schema Information
 #
 # Table name: songs
