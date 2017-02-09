@@ -1,16 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class='row'>
+  <div class='col-xs-10 col-xs-offset-1'>
+      <p id="notice"><%= notice %></p>
 
-<strong>Artists in <%= @genre.name %></strong>
+      <strong>Artists in <%= @genre.name %></strong>
 
-<ul>
+          <ul>
 
-  <% @genre.artists.order('name').each do |artist| %>
+            <% @genre.artists.order('name').each do |artist| %>
 
-    <li><%= artist.name %></li>
+              <li><%= artist.name %></li>
 
-  <% end %>
+            <% end %>
 
-</ul>
+          </ul>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
-<%= link_to 'Back', genres_path %>
+      <%= link_to 'Edit', edit_genre_path(@genre), class: 'btn btn-sm btn-default' %> |
+      <%= link_to 'Back', genres_path, class: 'btn btn-sm btn-info' %>
+
+  </div>
+</div>
+
